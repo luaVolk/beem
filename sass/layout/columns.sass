@@ -1,0 +1,94 @@
+$column-gap: 0.75rem !default
+
+.column
+  display: block
+  flex-basis: 0
+  flex-grow: 1
+  flex-shrink: 1
+  padding: $column-gap
+
+  @for $i from 1 through 12
+    .columns.columns--mobile > &.column--#{$i}
+      flex: none
+      width: percentage($i / 12)
+    .columns.columns--mobile > &.column--offset-#{$i}
+      margin-left: percentage($i / 12)
+  +mobile
+    @for $i from 1 through 12
+      &.column--#{$i}-mobile
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i}-mobile
+        margin-left: percentage($i / 12)
+  +tablet
+    @for $i from 1 through 12
+      &.column--#{$i},
+      &.column--#{$i}-tablet
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i},
+      &.column--offset-#{$i}-tablet
+        margin-left: percentage($i / 12)
+  +touch
+    @for $i from 1 through 12
+      &.column--#{$i}-touch
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i}-touch
+        margin-left: percentage($i / 12)
+  +desktop
+    @for $i from 1 through 12
+      &.column--#{$i}-desktop
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i}-desktop
+        margin-left: percentage($i / 12)
+  +widescreen
+    @for $i from 1 through 12
+      &.column--#{$i}-widescreen
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i}-widescreen
+        margin-left: percentage($i / 12)
+  +fullhd
+    @for $i from 1 through 12
+      &.column--#{$i}-fullhd
+        flex: none
+        width: percentage($i / 12)
+      &.column--offset-#{$i}-fullhd
+        margin-left: percentage($i / 12)
+
+
+.columns
+  margin-left: (-$column-gap)
+  margin-right: (-$column-gap)
+  margin-top: (-$column-gap)
+  &:last-child
+    margin-bottom: (-$column-gap)
+  &:not(:last-child)
+    margin-bottom: calc(1.5rem - #{$column-gap})
+  &.columns--centered
+    justify-content: center
+  &.columns--gapless
+    margin-left: 0
+    margin-right: 0
+    margin-top: 0
+    & > .column
+      margin: 0
+      padding: 0 !important
+    &:not(:last-child)
+      margin-bottom: 1.5rem
+    &:last-child
+      margin-bottom: 0
+  &.columns--mobile
+    display: flex
+  &.columns--multiline
+    flex-wrap: wrap
+  &.columns--vcentered
+    align-items: center
+  +tablet
+    &:not(.columns--desktop)
+      display: flex
+  +desktop
+    &.columns--desktop
+      display: flex

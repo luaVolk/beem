@@ -1,0 +1,18 @@
+.tag
+  background-color: #e6e9f1
+  padding: 0 0.3rem 
+  border-radius: .2rem
+  border: 1px solid #aeb7d0
+  display: inline-block
+  height: 1.5em
+  vertical-align: middle
+  text-align: center
+  min-width: 1.5em
+
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .tag.tag--#{map-get($map, alt)}
+      background-color: map-get($map, light)
+      color: text-contrast(map-get($map, light))
+      border-color: map-get($map, regular)

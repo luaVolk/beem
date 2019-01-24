@@ -1,0 +1,8 @@
+@each $i, $spacing in $spacings
+  @each $type, $pre in (padding: p, margin: m)
+    .#{$pre}-#{$i}
+      #{$type}: #{map-get($spacings, $i)}rem !important
+
+    @each $direction in $directions
+      .#{$pre}#{str-slice($direction, 0, 1)}-#{$i}
+        #{$type}-#{$direction}: #{map-get($spacings, $i)}rem !important

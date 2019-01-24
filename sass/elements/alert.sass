@@ -1,0 +1,15 @@
+.alert
+  background-color: $lightgrey
+  color: transparentize($darkergrey, .3)
+  padding: $padding-big
+  border: 1px solid $grey
+  border-radius: $radius-normal
+  margin-bottom: 1rem
+
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .alert.alert--#{map-get($map, alt)}
+      background-color: map-get($map, light)
+      color: text-contrast(map-get($map, light))
+      border-color: map-get($map, regular)

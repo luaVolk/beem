@@ -1,0 +1,122 @@
+// Colors
+
+// Blue
+$blue: #00aaff !default
+
+$lightblue: lighten($blue, 15%) !default
+$lighterblue: lighten($blue, 45%) !default
+
+$darkblue: darken($blue, 5%) !default
+$darkerblue: darken($blue, 10%) !default
+
+$alt-blue: primary !default
+
+// Deep Blue
+$deepblue: #3d74f5 !default
+
+$lightdeepblue: lighten($deepblue, 15%) !default
+$lighterdeepblue: lighten($deepblue, 45%) !default
+
+$darkdeepblue: darken($deepblue, 5%) !default
+$darkerdeepblue: darken($deepblue, 10%) !default
+
+$alt-deepblue: info !default
+
+// Red
+$red: #f53d5c !default
+
+$lightred: lighten($red, 10%) !default
+$lighterred: lighten($red, 35%) !default
+
+$darkred: darken($red, 10%) !default
+$darkerred: darken($red, 15%) !default
+
+$alt-red: danger !default
+
+// Green
+$green: #06e061 !default
+
+$lightgreen: lighten($green, 10%) !default
+$lightergreen: lighten($green, 45%) !default
+
+$darkgreen: darken($green, 5%) !default
+$darkergreen: darken($green, 10%) !default
+
+$alt-green: success !default
+
+// Yellow
+$yellow: #ffd91a !default
+
+$lightyellow: lighten($yellow, 15%) !default
+$lighteryellow: lighten($yellow, 40%) !default
+
+$darkyellow: darken($yellow, 10%) !default
+$darkeryellow: darken($yellow, 20%) !default
+
+$alt-yellow: warning !default
+
+// Black and White
+$black: #000 !default
+
+$alt-black: dark !default
+
+// $darkgrey: #aaa !default
+$darkergrey: #2e3752 !default
+$darkgrey: #404d72 !default
+$grey: #aeb7d0 !default
+$lightgrey: #e6e9f1 !default
+$lightergrey: #f8f9fb !default
+
+$white: #ffffff !default
+
+$alt-white: light !default
+
+$colors: () !default
+$colors: map-merge($colors, (blue: (regular: $blue, light: $lightblue, lighter: $lighterblue, dark: $darkblue,darker: $darkerblue, alt: $alt-blue)))
+$colors: map-merge($colors, (deepblue: (regular: $deepblue, light: $lightdeepblue, lighter: $lighterdeepblue, dark: $darkdeepblue,darker: $darkerdeepblue, alt: $alt-deepblue)))
+$colors: map-merge($colors, (red: (regular: $red, light: $lightred, lighter: $lighterred, dark: $darkred, darker: $darkerred, alt: $alt-red)))
+$colors: map-merge($colors, (green: (regular: $green, light: $lightgreen, lighter: $lightergreen, dark: $darkgreen, darker: $darkergreen, alt: $alt-green)))
+$colors: map-merge($colors, (yellow: (regular: $yellow, light: $lightyellow, lighter: $lighteryellow, dark: $darkyellow, darker: $darkeryellow, alt: $alt-yellow)))
+$colors: map-merge($colors, (grey: (regular: $grey, light: $lightgrey, lighter: $lightergrey, dark: $darkgrey, darker: $darkgrey, alt: $alt-white)))
+$colors: map-merge($colors, (black: (regular: $darkgrey, light: $darkergrey, lighter: $darkergrey, dark: $grey, darker: $lightgrey, alt: $alt-black)))
+
+
+$main: $blue !default
+
+
+// Layout (taken from Bulma https://github.com/jgthms/bulma/blob/ceae8a675edad50591fc0ad62db1278286d8d6aa/sass/utilities/initial-variables.sass#L46)
+
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: 64px !default
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default
+$widescreen-enabled: true !default
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default
+$fullhd-enabled: true !default
+
+// Vendor stuff
+
+$vendors: webkit moz ms
+
+$range-tracks: -webkit-slider-runnable-track -moz-range-track -ms-track
+$range-thumbs: -webkit-slider-thumb -moz-range-thumb -ms-thumb
+
+
+// Spacings
+
+$directions: top right bottom left
+$spacings: (0: 0, 1: .25, 2: .5, 3: 1, 4: 1.5, 5: 3)
+
+$padding-small: .15rem .3rem !default
+$padding-normal: .3rem .6rem !default
+$padding-big: .6rem 1.2rem !default
+
+// Radius
+  
+$radius-normal: .2rem !default
+$radius-round: 50% !default

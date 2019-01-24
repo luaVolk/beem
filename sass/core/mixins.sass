@@ -1,0 +1,69 @@
+// Waves
+=fullwave($color)
+  box-shadow: 0 0 0 6px transparentize($color, 1)
+=halfwave($color)
+  box-shadow: 0 0 0 3px transparentize($color, 0.75)
+=startwave($color)
+  box-shadow: 0 0 0 0px transparentize($color, 0.5)
+=nowave($color)
+  box-shadow: 0 0 0 0px transparentize($color, 1)
+
+// Layout (taken from Bulma https://github.com/jgthms/bulma/blob/ceae8a675edad50591fc0ad62db1278286d8d6aa/sass/utilities/initial-variables.sass#L46)
+
+=from($device)
+  @media screen and (min-width: $device)
+    @content
+
+=until($device)
+  @media screen and (max-width: $device - 1px)
+    @content
+
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet), print
+    @content
+
+=tablet-only
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+
+=touch
+  @media screen and (max-width: $desktop - 1px)
+    @content
+
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+=desktop-only
+  @if $widescreen-enabled
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+      @content
+
+=until-widescreen
+  @if $widescreen-enabled
+    @media screen and (max-width: $widescreen - 1px)
+      @content
+
+=widescreen
+  @if $widescreen-enabled
+    @media screen and (min-width: $widescreen)
+      @content
+
+=widescreen-only
+  @if $widescreen-enabled and $fullhd-enabled
+    @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px)
+      @content
+
+=until-fullhd
+  @if $fullhd-enabled
+    @media screen and (max-width: $fullhd - 1px)
+      @content
+
+=fullhd
+  @if $fullhd-enabled
+    @media screen and (min-width: $fullhd)
+      @content

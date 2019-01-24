@@ -1,0 +1,61 @@
+// TODO: Combine with radio.sass
+input[type="checkbox"].checkbox
+  position: absolute
+  visibility: hidden
+
+  & + .checkbox-label
+    position: relative
+    padding-left: 2rem
+    vertical-align: middle
+    &:before
+      content: ' '
+      position: absolute
+      left: .3rem
+      height: 1em
+      width: 1em
+      border: 1px solid $darkgrey
+      border-radius: $radius-normal
+      transition: 0s
+      +startwave($grey)
+    &:after
+      content: "L"
+      position: absolute
+      left: 0.3rem
+      height: 1em
+      width: 1em
+      color: $grey
+      font-weight: 900
+      font-family: monospace
+      text-align: center
+      line-height: 1rem
+      border: 1px solid transparent
+      transition: 0.4s
+      transform: scale(0) rotateY(180deg) rotateZ(-45deg)
+
+  // Colors
+  @each $color, $map in $colors
+    @if map-get($map, alt)
+      &.checkbox--#{map-get($map, alt)}
+        & + .checkbox-label
+          &:before
+            +startwave(map-get($map, regular))
+          &:after
+            color: map-get($map, regular)
+        &:checked + .checkbox--label:before
+          border-color: map-get($map, regular)
+          +fullwave(map-get($map, regular))
+          
+  &:checked + .checkbox-label
+    &:before
+      border-color: $grey
+      transition: 0.7s
+      +fullwave($grey)
+    &:after
+      transform: scale(0.8) rotateY(180deg) rotateZ(-45deg)
+  &[disabled]
+    & + .checkbox-label
+      cursor: not-allowed
+      color: $darkgrey
+      &:before
+        background-color: $lightergrey
+        border-color: $lightgrey

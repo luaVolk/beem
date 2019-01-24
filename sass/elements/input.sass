@@ -1,0 +1,37 @@
+.input, .textarea, .select
+  min-width: 10rem
+  background-color: $white
+  font-size: 0.9rem
+  color: inherit
+  padding: $padding-normal
+  border-radius: $radius-normal
+  border: 1px solid $lightgrey
+  outline: none
+  transition: 0.4s border, 0.7s box-shadow
+  display: block
+  width: 100%
+  +fullwave($grey)
+  &:hover
+    border-color: $grey
+  &:focus
+    border-color: $grey
+    +halfwave($grey)
+  &::placeholder
+    color: $grey
+    opacity: 1
+  &[disabled]
+    background-color: $lightergrey
+    border-color: $lightgrey !important
+    &::placeholder
+      color: $lightgrey
+
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .input.input--#{map-get($map, alt)}, .textarea.textarea--#{map-get($map, alt)}, .select.select--#{map-get($map, alt)}
+        +fullwave(map-get($map, regular))
+        &:hover
+          border-color: map-get($map, regular)
+        &:focus
+          border-color: map-get($map, regular)
+          +halfwave(map-get($map, regular))

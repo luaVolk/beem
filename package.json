@@ -1,0 +1,38 @@
+{
+  "name": "beem",
+  "version": "0.0.1",
+  "description": "A css framework that looks great out of the box and follows the BEM methodology",
+  "keywords": [
+    "css",
+    "sass",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "main": "sass/beem.sass",
+  "homepage": "https://github.com/TemplarVolk/beem",
+  "author": "Volk <templar.volk@yandex.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TemplarVolk/beem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TemplarVolk/beem/issues"
+  },
+  "scripts": {
+    "sass-watch": "nodemon --watch sass/ --ext sass --exec \"sass sass/beem.sass web/main.css\"",
+    "sass-build": "node-sass sass/beem.sass dist/beem-min.css --output-style compressed & node-sass sass/beem.sass dist/beem.css"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "sass",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "node-sass": "^4.11.0"
+  }
+}

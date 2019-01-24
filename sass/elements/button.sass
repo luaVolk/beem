@@ -1,0 +1,100 @@
+.button
+  position: relative
+  background-color: $grey
+  color: $lightergrey
+  font-size: .9rem
+  font-family: inherit
+  font-weight: inherit
+  min-height: 2rem
+  padding: $padding-normal
+  border: none
+  border-radius: $radius-normal
+  border-width: 1px
+  border-style: solid
+  border-color: transparent
+  outline: none
+  user-select: none
+  cursor: pointer
+  transition: .4s
+  &:before
+    content: "\25DC"
+    position: absolute
+    font-size: 1.3em
+    left: .3rem
+    top: .1rem
+    opacity: 0
+  &.button--loading
+    background-color: $lightgrey
+    padding-left: 1.5rem
+    &:before
+      opacity: 1
+      transition: .7s
+      transform: rotateZ(360deg)
+      animation: rotate 1s infinite linear
+      transform-origin: right
+  &:after
+    z-index: 1
+    content: ' '
+    position: absolute
+    width: calc(100% + 2px)
+    height: calc(100% + 2px)
+    top: -1px
+    left: -1px
+    border-radius: inherit
+    transition: 0s
+    +fullwave($grey)
+  &:hover
+    background-color: $lightgrey
+    transition: .4s
+    &:after
+      transition: .7s
+  &:active:not(.button--loading):not([disabled])
+    &:hover
+      transition: .4s
+      background-color: $darkgrey
+      &:after
+        transition: 0s
+        +startwave($grey)
+  &[disabled]
+    background-color: $lightergrey !important
+    border-color: $lightgrey !important
+    color: $lightgrey !important
+  &.button--outlined
+    background-color: transparent !important
+    border-color: $grey
+    color: $grey
+    &:hover
+      color: $lightgrey
+      border-color: $lightgrey
+    &:active
+      color: $darkgrey
+      border-color: $darkgrey
+  &.button--round
+    width: 2rem
+    padding: 0
+    border-radius: $radius-round
+
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .button.button--#{map-get($map, alt)}
+      background-color: map-get($map, regular)
+      color: text-contrast(map-get($map, regular))
+      &.loading, &:hover
+        background-color: map-get($map, light)
+      &:active:not(.button--loading):not([disabled])
+        &:hover
+          background-color: map-get($map, dark)
+          &:after
+            +startwave(map-get($map, regular))
+      &:after
+        +fullwave(map-get($map, regular))
+      &.button--outlined
+        border-color: map-get($map, regular)
+        color: map-get($map, regular)
+        &:hover
+          color: map-get($map, light)
+          border-color: map-get($map, light)
+        &:active
+          color: map-get($map, dark)
+          border-color: map-get($map, dark)

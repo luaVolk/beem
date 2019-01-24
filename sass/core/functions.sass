@@ -1,0 +1,7 @@
+@function text-contrast($n) 
+  $color-brightness: round((red($n)*299)+(green($n)*587)+(blue($n)*114)/1000)
+  $light-color: round((red($lightergrey)*299)+(green($lightergrey)*587)+(blue($lightergrey)*114)/1000)
+  @if abs($color-brightness) < ($light-color/1.5)
+    @return transparentize($lightergrey, .2)
+  @else 
+    @return transparentize($darkergrey, .3)

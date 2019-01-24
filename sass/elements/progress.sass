@@ -1,0 +1,34 @@
+=progress-bar($color)
+  &::-webkit-progress-bar
+    background-color: $lightgrey
+  &::-webkit-progress-value
+    background-color: $color
+  &::-moz-progress-bar
+    background-color: $color
+  &::-ms-fill
+    background-color: $color
+    border: none
+
+
+.progress
+  -moz-appearance: none
+  -webkit-appearance: none
+  border: none
+  border-radius: $radius-normal
+  display: block
+  // height: $size-normal
+  overflow: hidden
+  padding: 0
+  width: 100%
+  height: 1rem
+  +progress-bar($grey)
+  &.progress--progressing
+    animation: waving .7s infinite
+
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .progress.progress--#{map-get($map, alt)}
+      +progress-bar(map-get($map, regular))
+      &.progress--progressing
+        animation: waving-#{map-get($map, alt)} .7s infinite

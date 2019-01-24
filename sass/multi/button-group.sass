@@ -1,0 +1,32 @@
+//TODO: combine with input-group.sass
+.button-group
+  display: flex
+  .button
+    &[disabled]
+      border-width: 1px 0 1px 0
+      & + .button
+        border-width: 1px 0 1px 0
+        &[disabled]
+          border-width: 1px 0 1px 1px
+          border-color: $lightgrey
+      & + .button.button--outlined
+        border-width: 1px
+        border-left-color: initial
+    &.button--outlined 
+      & +.button
+        border-width: 1px 1px 1px 0
+      & +.button[disabled]
+        border-width: 1px 0 1px 0
+    &:first-child
+      border-left-width: 1px
+      &, &:after
+        border-radius: $radius-normal 0 0 $radius-normal
+    &:last-child
+      border-right-width: 1px
+      &, &:after
+        border-radius: 0 $radius-normal $radius-normal 0
+    &:not(:first-child)
+      // border-left-color: $white
+      &:not(:last-child),
+      &:not(:last-child):after
+        border-radius: 0

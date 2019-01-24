@@ -1,0 +1,26 @@
+@keyframes rotate
+  0%
+    transform: rotateZ(0deg)
+  100%
+    transform: rotateZ(360deg)
+
+
+@keyframes progress-stripes
+  0%
+    background-position-x: 0
+  100%
+    background-position-x: 20px
+
+@keyframes waving
+  0%
+    +startwave($grey)
+  100%
+    +fullwave($grey)
+
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    @keyframes waving-#{map-get($map, alt)}
+      0%
+        +startwave(map-get($map, regular))
+      100%
+        +fullwave(map-get($map, regular))
