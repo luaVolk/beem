@@ -28,7 +28,7 @@
 // Colors
 @each $color, $map in $colors
   @if map-get($map, alt)
-    .input.input--#{map-get($map, alt)}, .textarea.textarea--#{map-get($map, alt)}, .select.select--#{map-get($map, alt)}
+    .input--#{map-get($map, alt)}, .textarea--#{map-get($map, alt)}, .select--#{map-get($map, alt)}
         +fullwave(map-get($map, regular))
         &:hover
           border-color: map-get($map, regular)

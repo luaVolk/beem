@@ -1,5 +1,5 @@
 // TODO: Combine with checkbox.sass
-input[type="radio"].radio
+.radio
   position: absolute
   visibility: hidden
 
@@ -29,19 +29,6 @@ input[type="radio"].radio
       transition: 0.4s
       transform: scale(0)
 
-  // Colors
-  @each $color, $map in $colors
-    @if map-get($map, alt)
-      &.radio--#{map-get($map, alt)}
-        & + .radio-label
-          &:before
-            +startwave(map-get($map, regular))
-          &:after
-            background-color: map-get($map, regular)
-        &:checked + .radio-label:before
-          border-color: map-get($map, regular)
-          +fullwave(map-get($map, regular))
-
   &:checked + .radio-label
     &:before
       border-color: $grey
@@ -60,4 +47,17 @@ input[type="radio"].radio
       &:after
         background-color: $lightgrey !important
       
+// Colors
+@each $color, $map in $colors
+  @if map-get($map, alt)
+    .radio--#{map-get($map, alt)}
+      & + .radio-label
+        &:before
+          +startwave(map-get($map, regular))
+        &:after
+          background-color: map-get($map, regular)
+      &:checked + .radio-label:before
+        border-color: map-get($map, regular)
+        +fullwave(map-get($map, regular))
+
 

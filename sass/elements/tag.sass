@@ -12,7 +12,7 @@
 // Colors
 @each $color, $map in $colors
   @if map-get($map, alt)
-    .tag.tag--#{map-get($map, alt)}
+    .tag--#{map-get($map, alt)}
       background-color: map-get($map, light)
       color: text-contrast(map-get($map, light))
       border-color: map-get($map, regular)

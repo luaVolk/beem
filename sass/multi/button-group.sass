@@ -12,11 +12,6 @@
       & + .button.button--outlined
         border-width: 1px
         border-left-color: initial
-    &.button--outlined 
-      & +.button
-        border-width: 1px 1px 1px 0
-      & +.button[disabled]
-        border-width: 1px 0 1px 0
     &:first-child
       border-left-width: 1px
       &, &:after
@@ -30,3 +25,8 @@
       &:not(:last-child),
       &:not(:last-child):after
         border-radius: 0
+  .button--outlined 
+    & +.button
+      border-width: 1px 1px 1px 0
+    & +.button[disabled]
+      border-width: 1px 0 1px 0

@@ -34,7 +34,7 @@ $thumb-size: .7rem !default
     &:active
       box-shadow: none
 
-input[type="range"].range
+.range
   background: transparent
   border: 0
   outline: none
@@ -44,10 +44,6 @@ input[type="range"].range
   -ms-appearance: none
   appearance: none
   cursor: pointer
-  &.range--wide
-    display: block
-    width: 100%
-
   &[data-value]:after
     content: attr(data-value)
 
@@ -56,9 +52,13 @@ input[type="range"].range
     +range-thumb($thumb, map-get($colors, grey))
   @each $track in $range-tracks
     +range-track($track)
+.range--wide
+  display: block
+  width: 100%
+
 
 // Colors
 @each $color, $map in $colors
-  input[type="range"].range.range--#{map-get($map, alt)}
+  .range--#{map-get($map, alt)}
     @each $thumb in $range-thumbs
       +range-thumb($thumb, $map)
