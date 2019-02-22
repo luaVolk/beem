@@ -19,7 +19,7 @@
 
 @each $color, $map in $colors
   @if map-get($map, alt)
-    @keyframes waving-#{map-get($map, alt)}
+    @keyframes waving--#{map-get($map, alt)}
       0%
         +startwave(map-get($map, regular))
       100%

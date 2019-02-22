@@ -29,5 +29,5 @@
   @if map-get($map, alt)
     .progress--#{map-get($map, alt)}
       +progress-bar(map-get($map, regular))
-    .progress--progressing
-      animation: waving-#{map-get($map, alt)} .7s infinite
+      &.progress--progressing
+        animation: waving--#{map-get($map, alt)} .7s infinite
