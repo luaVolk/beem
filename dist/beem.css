@@ -16,43 +16,43 @@
   100% {
     box-shadow: 0 0 0 6px rgba(174, 183, 208, 0); } }
 
-@keyframes waving-primary {
+@keyframes waving--primary {
   0% {
     box-shadow: 0 0 0 0px rgba(0, 170, 255, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(0, 170, 255, 0); } }
 
-@keyframes waving-info {
+@keyframes waving--info {
   0% {
     box-shadow: 0 0 0 0px rgba(61, 116, 245, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(61, 116, 245, 0); } }
 
-@keyframes waving-danger {
+@keyframes waving--danger {
   0% {
     box-shadow: 0 0 0 0px rgba(245, 61, 92, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(245, 61, 92, 0); } }
 
-@keyframes waving-success {
+@keyframes waving--success {
   0% {
     box-shadow: 0 0 0 0px rgba(6, 224, 97, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(6, 224, 97, 0); } }
 
-@keyframes waving-warning {
+@keyframes waving--warning {
   0% {
     box-shadow: 0 0 0 0px rgba(255, 217, 26, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(255, 217, 26, 0); } }
 
-@keyframes waving-light {
+@keyframes waving--light {
   0% {
     box-shadow: 0 0 0 0px rgba(174, 183, 208, 0.5); }
   100% {
     box-shadow: 0 0 0 6px rgba(174, 183, 208, 0); } }
 
-@keyframes waving-dark {
+@keyframes waving--dark {
   0% {
     box-shadow: 0 0 0 0px rgba(64, 77, 114, 0.5); }
   100% {
@@ -97,46 +97,46 @@ a {
 .text-centered {
   text-align: center; }
 
-.bg-primary {
+.bg--primary {
   background-color: #00aaff; }
 
-.fg-primary {
+.text--primary {
   color: #00aaff; }
 
-.bg-info {
+.bg--info {
   background-color: #3d74f5; }
 
-.fg-info {
+.text--info {
   color: #3d74f5; }
 
-.bg-danger {
+.bg--danger {
   background-color: #f53d5c; }
 
-.fg-danger {
+.text--danger {
   color: #f53d5c; }
 
-.bg-success {
+.bg--success {
   background-color: #06e061; }
 
-.fg-success {
+.text--success {
   color: #06e061; }
 
-.bg-warning {
+.bg--warning {
   background-color: #ffd91a; }
 
-.fg-warning {
+.text--warning {
   color: #ffd91a; }
 
-.bg-light {
+.bg--light {
   background-color: #aeb7d0; }
 
-.fg-light {
+.text--light {
   color: #aeb7d0; }
 
-.bg-dark {
+.bg--dark {
   background-color: #404d72; }
 
-.fg-dark {
+.text--dark {
   color: #404d72; }
 
 .p-0 {
@@ -1324,8 +1324,8 @@ a {
   background-color: #00aaff;
   border: none; }
 
-.progress--progressing {
-  animation: waving-primary 0.7s infinite; }
+.progress--primary.progress--progressing {
+  animation: waving--primary 0.7s infinite; }
 
 .progress--info::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1340,8 +1340,8 @@ a {
   background-color: #3d74f5;
   border: none; }
 
-.progress--progressing {
-  animation: waving-info 0.7s infinite; }
+.progress--info.progress--progressing {
+  animation: waving--info 0.7s infinite; }
 
 .progress--danger::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1356,8 +1356,8 @@ a {
   background-color: #f53d5c;
   border: none; }
 
-.progress--progressing {
-  animation: waving-danger 0.7s infinite; }
+.progress--danger.progress--progressing {
+  animation: waving--danger 0.7s infinite; }
 
 .progress--success::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1372,8 +1372,8 @@ a {
   background-color: #06e061;
   border: none; }
 
-.progress--progressing {
-  animation: waving-success 0.7s infinite; }
+.progress--success.progress--progressing {
+  animation: waving--success 0.7s infinite; }
 
 .progress--warning::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1388,8 +1388,8 @@ a {
   background-color: #ffd91a;
   border: none; }
 
-.progress--progressing {
-  animation: waving-warning 0.7s infinite; }
+.progress--warning.progress--progressing {
+  animation: waving--warning 0.7s infinite; }
 
 .progress--light::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1404,8 +1404,8 @@ a {
   background-color: #aeb7d0;
   border: none; }
 
-.progress--progressing {
-  animation: waving-light 0.7s infinite; }
+.progress--light.progress--progressing {
+  animation: waving--light 0.7s infinite; }
 
 .progress--dark::-webkit-progress-bar {
   background-color: #e6e9f1; }
@@ -1420,8 +1420,8 @@ a {
   background-color: #404d72;
   border: none; }
 
-.progress--progressing {
-  animation: waving-dark 0.7s infinite; }
+.progress--dark.progress--progressing {
+  animation: waving--dark 0.7s infinite; }
 
 .range {
   background: transparent;
@@ -1433,8 +1433,6 @@ a {
   -ms-appearance: none;
   appearance: none;
   cursor: pointer; }
-  .range[data-value]:after {
-    content: attr(data-value); }
   .range::-webkit-slider-thumb {
     height: 0.7rem;
     width: 0.7rem;

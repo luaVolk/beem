@@ -40,7 +40,7 @@ a
 // Colors
 @each $color, $map in $colors
   @if map-get($map, alt)
-    .bg-#{map-get($map, alt)}
+    .bg--#{map-get($map, alt)}
       background-color: map-get($map, regular)
-    .fg-#{map-get($map, alt)}
+    .text--#{map-get($map, alt)}
       color: map-get($map, regular)
