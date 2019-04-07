@@ -17,11 +17,14 @@
   cursor: pointer
   transition: .4s
   &:before
-    content: "\25DC"
+    content: " "
     position: absolute
-    font-size: 1.3em
-    left: .3rem
-    top: .1rem
+    width: .8rem
+    height: .8rem
+    left: .4rem
+    border: 1px solid $lightergrey
+    border-bottom-color: transparent
+    border-radius: 50%
     opacity: 0
   &:after
     z-index: 1
@@ -52,13 +55,13 @@
     color: $lightgrey !important
 .button--loading
   background-color: $lightgrey
-  padding-left: 1.5rem
+  padding-left: 1.6rem
   &:before
     opacity: 1
     transition: .7s
     transform: rotateZ(360deg)
     animation: rotate 1s infinite linear
-    transform-origin: right
+    transform-origin: center
 .button--outlined
   background-color: transparent !important
   border-color: $grey
